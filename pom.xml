@@ -134,13 +134,11 @@ under the License.
   </properties>
 
   <dependencies>
-    <!-- UNIQUE FOR THIS JAVA COMPONENT -->
     <dependency>
       <groupId>org.apache.datasketches</groupId>
       <artifactId>datasketches-memory</artifactId>
       <version>${datasketches-memory.version}</version>
     </dependency>
-    <!-- END: UNIQUE FOR THIS JAVA COMPONENT -->
     <!-- Test Scope -->
     <dependency>
       <groupId>org.testng</groupId>
@@ -148,16 +146,18 @@ under the License.
       <version>${testng.version}</version>
       <scope>test</scope>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>org.apache.datasketches</groupId>
-      <artifactId>datasketches-java-common</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-    -->
   </dependencies>
 
   <build>
+    <!-- see https://maven.apache.org/pom.html#Properties -->
+    <resources>
+      <resource>
+        <directory>${project.basedir}/src/main/javadoc/resources</directory>
+      </resource>
+      <resource>
+        <directory>${project.basedir}/src/main/javadoc</directory>
+      </resource>
+    </resources>
     <pluginManagement>
       <plugins>
 
